@@ -1,0 +1,22 @@
+<mat-card class="file-input-card">
+    <mat-card-content>
+        <button mat-raised-button
+            (click)="fileInput.click()">
+            Choose File
+        </button>
+        <input #fileInput hidden type="file"
+            accept=".txt" multiple="false"
+            (change)="onFileSelected($event)"
+        />
+        <span class="file-name">
+            {{selectedFile?.name}}
+        </span>
+        @if (selectedFile) {
+            <button mat-icon-button
+                class="remove-file-button"
+                (click)="selectedFile = undefined">
+                <mat-icon>delete_forever</mat-icon>
+            </button>
+        }
+    </mat-card-content>
+</mat-card>
