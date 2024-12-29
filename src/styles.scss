@@ -39,6 +39,13 @@ html {
     margin: 0.5rem;
     width: 8rem;
   }
+
+  .card {
+    padding: 1rem;
+    margin: auto;
+    width: 80%;
+    max-width: 30rem;
+  }
 }
 
 mat-form-field {
