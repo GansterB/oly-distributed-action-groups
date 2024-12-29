@@ -2,11 +2,16 @@
     <mat-sidenav-container class="row content">
         <mat-sidenav mode="side" class="side-nav"
             [opened]="userServ.users.length > 0">
-            @for (user of userServ.users; track user) {
-                <button mat-button>
-                    {{user.alias ?? user.email}}
-                </button>
-            }
+            <mat-list>
+                @for (user of userServ.users; track user; let i = $index) {
+                    <mat-list-item>
+                        <button mat-button
+                            (click)="router.navigate(['user', i])">
+                            {{user.alias ?? user.email}}
+                        </button>
+                    </mat-list-item>
+                }
+            </mat-list>
         </mat-sidenav>
         <mat-sidenav-content>
             <ng-content />
