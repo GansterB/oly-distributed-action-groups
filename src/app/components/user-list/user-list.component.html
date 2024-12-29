@@ -5,7 +5,7 @@
             <mat-list>
                 @for (user of userServ.users; track user; let i = $index) {
                     <mat-list-item>
-                        <button mat-button
+                        <button mat-button class="user-button"
                             (click)="router.navigate(['user', i])">
                             {{user.alias ?? user.email}}
                         </button>
