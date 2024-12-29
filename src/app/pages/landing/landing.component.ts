@@ -35,7 +35,6 @@ export class LandingComponent {
         .split(/[ ,\t\r\n]+/)
         .filter(e => e);
 
-      console.log('email list:', emails);
       this.userServ.addUsers(emails);
     }
   }

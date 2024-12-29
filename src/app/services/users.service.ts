@@ -11,10 +11,8 @@ export class UsersService {
 
   constructor() {
     const cache = localStorage.getItem(this.usersKey);
-    console.log('cache:', cache);
     if (cache) {
       const userCache:User[]|undefined = JSON.parse(cache);
-      console.log('parsed cache:', userCache);
       if (userCache)
         this.users = userCache;
     }
