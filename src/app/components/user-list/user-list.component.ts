@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { UsersService } from '../../services/users.service';
-import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { Router } from '@angular/router';
 
@@ -9,13 +8,14 @@ import { Router } from '@angular/router';
   selector: 'app-user-list',
   imports: [
     MatSidenavModule,
-    MatButtonModule,
     MatListModule,
   ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
 export class UserListComponent {
+
+  readonly id = input<number>();
 
   constructor(
     public router: Router,
