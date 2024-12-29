@@ -27,7 +27,7 @@ export class LandingComponent {
 
       const text = await this.selectedFile.text();
       const emails = text
-        .split(/[ ,\r\n]+/)
+        .split(/[ ,\t\r\n]+/)
         .filter(e => e);
 
       console.log('email list:', emails);
