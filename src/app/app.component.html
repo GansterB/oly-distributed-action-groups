@@ -4,16 +4,16 @@
   </mat-toolbar>
   <mat-sidenav-container class="row content">
     <mat-sidenav opened mode="side" class="side-nav">
-      <button mat-fab class="page-link">
+      <button mat-fab class="page-link"
+        (click)="router.navigate([''])">
         <mat-icon>upload</mat-icon>Upload
       </button>
-      <button mat-fab class="page-link">
+      <button mat-fab class="page-link"
+        (click)="router.navigate(['send'])">
         <mat-icon>mail</mat-icon>Send
       </button>
-      <button mat-fab class="page-link">
-        <mat-icon>person</mat-icon>Users
-      </button>
-      <button mat-fab class="page-link">
+      <button mat-fab class="page-link"
+        (click)="router.navigate(['settings'])">
         <mat-icon>settings</mat-icon>Settings
       </button>
       <button mat-fab class="page-link">
