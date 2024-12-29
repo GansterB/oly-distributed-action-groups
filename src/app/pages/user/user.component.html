@@ -1,0 +1,30 @@
+<app-user-list>
+    <div class="form">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="userServ.users[id()].email" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Alias</mat-label>
+            <input matInput [(ngModel)]="userServ.users[id()].alias" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Max Skips</mat-label>
+            <input matInput type="number"
+                [(ngModel)]="userServ.users[id()].maxSkips"
+            />
+            <mat-hint>
+                How many this person will be skipped between being selected
+            </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Remaining Skips</mat-label>
+            <input matInput type="number"
+                [(ngModel)]="userServ.users[id()].remainingSkips"
+            />
+            <mat-hint>
+                How many this person will be skipped before being selected again
+            </mat-hint>
+        </mat-form-field>
+    </div>
+</app-user-list>
