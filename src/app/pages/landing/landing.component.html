@@ -1,36 +1,24 @@
-<div class="box">
-    <mat-sidenav-container class="row content">
-        <mat-sidenav mode="side" class="side-nav"
-            [opened]="userServ.users.length > 0">
-            @for (user of userServ.users; track user) {
-                <button mat-button>
-                    {{user.alias ?? user.email}}
+<app-user-list>
+    <mat-card class="file-input-card">
+        <mat-card-content>
+            <button mat-raised-button
+                (click)="fileInput.click()">
+                Choose File
+            </button>
+            <input #fileInput hidden type="file"
+                accept=".txt" multiple="false"
+                (change)="onFileSelected($event)"
+            />
+            <span class="file-name">
+                {{selectedFile?.name}}
+            </span>
+            @if (selectedFile) {
+                <button mat-icon-button
+                    class="remove-file-button"
+                    (click)="selectedFile = undefined">
+                    <mat-icon>delete_forever</mat-icon>
                 </button>
             }
-        </mat-sidenav>
-        <mat-sidenav-content>
-            <mat-card class="file-input-card">
-                <mat-card-content>
-                    <button mat-raised-button
-                        (click)="fileInput.click()">
-                        Choose File
-                    </button>
-                    <input #fileInput hidden type="file"
-                        accept=".txt" multiple="false"
-                        (change)="onFileSelected($event)"
-                    />
-                    <span class="file-name">
-                        {{selectedFile?.name}}
-                    </span>
-                    @if (selectedFile) {
-                        <button mat-icon-button
-                            class="remove-file-button"
-                            (click)="selectedFile = undefined">
-                            <mat-icon>delete_forever</mat-icon>
-                        </button>
-                    }
-                </mat-card-content>
-            </mat-card>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-</div>
+        </mat-card-content>
+    </mat-card>
+</app-user-list>

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { UsersService } from '../../services/users.service';
+import { UserListComponent } from "../../components/user-list/user-list.component";
 
 type FileEvent = Event & {
   target: EventTarget & { files?: File[] } | null
@@ -15,7 +15,7 @@ type FileEvent = Event & {
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatSidenavModule,
+    UserListComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',

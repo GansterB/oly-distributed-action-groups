@@ -1,0 +1,15 @@
+<div class="box">
+    <mat-sidenav-container class="row content">
+        <mat-sidenav mode="side" class="side-nav"
+            [opened]="userServ.users.length > 0">
+            @for (user of userServ.users; track user) {
+                <button mat-button>
+                    {{user.alias ?? user.email}}
+                </button>
+            }
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <ng-content />
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
